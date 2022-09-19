@@ -14,6 +14,7 @@
   "author": "Bárbaro Javier Valmaseda <hello@bjvalmaseda.com> (https://bjvalmaseda.com/)",
   "license": "MIT",
   "dependencies": {
+    "@hapi/boom": "^10.0.0",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "joi": "^17.6.0",
