@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "migrations:generate": "sequelize-cli migration:generate --name",
+    "migrations:run": "sequelize-cli db:migrate",
+    "migrations:rollback": "sequelize-cli db:migrate:undo",
+    "migrations:clean": "sequelize-cli db:migrate:undo:all"
   },
   "keywords": [],
   "author": "Bárbaro Javier Valmaseda <hello@bjvalmaseda.com> (https://bjvalmaseda.com/)",
@@ -15,7 +19,8 @@
     "joi": "^17.6.0",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.23.0"
+    "sequelize": "^6.23.0",
+    "sequelize-cli": "^6.4.1"
   },
   "devDependencies": {
     "eslint": "^8.23.1",
