@@ -10,7 +10,7 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.drop(GATEWAYS_TABLE);
-    await queryInterface.drop(DEVICES_TABLE);
+    await queryInterface.dropTable(DEVICES_TABLE);
+    await queryInterface.dropTable(GATEWAYS_TABLE);
   },
 };

@@ -4,11 +4,6 @@ const boom = require('@hapi/boom');
 class GatewayService {
   constructor() {}
 
-  async create(data) {
-    const gateway = await models.Gateway.create(data);
-    return gateway;
-  }
-
   async find() {
     const gateways = await models.Gateway.findAll();
     return gateways;
@@ -19,6 +14,11 @@ class GatewayService {
     if (!gateway) {
       throw boom.notFound('Gateway not found');
     }
+    return gateway;
+  }
+
+  async create(data) {
+    const gateway = await models.Gateway.create(data);
     return gateway;
   }
 

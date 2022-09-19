@@ -14,9 +14,9 @@ const DeviceSchema = {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  ip: {
-    type: DataTypes.STRING,
-    allowNull: false,
+  status: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false,
   },
   dateCreated: {
     allowNull: false,
