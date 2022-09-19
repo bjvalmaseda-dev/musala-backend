@@ -1,4 +1,5 @@
 const express = require('express');
+const { config } = require('./config/config');
 
 const routerApi = require('./routers');
 const {
@@ -9,7 +10,7 @@ const {
 } = require('./middlewares/errors.handler');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = config.port || 3000;
 
 app.use(express.json());
 
@@ -21,5 +22,5 @@ routerApi(app);
 
 app.use([logErrors, boomErrorHandler, ormErrorHandler, errorHandler]);
 app.listen(PORT, () => {
-  console.info('Api listen at 3000');
+  console.info(`API listen at port ${PORT}`);
 });
