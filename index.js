@@ -1,5 +1,6 @@
 const express = require('express');
 const { config } = require('./config/config');
+const cors = require('cors');
 
 const routerApi = require('./routers');
 const {
@@ -13,7 +14,7 @@ const app = express();
 const PORT = config.port || 3000;
 
 app.use(express.json());
-
+app.use(cors());
 app.get('/', (req, res) => {
   res.json({ message: "everything's is OK, we are aboard" });
 });
