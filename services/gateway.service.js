@@ -18,7 +18,7 @@ class GatewayService {
   }
 
   async create(data) {
-    const gateway = await models.Gateway.create(data);
+    const gateway = await models.Gateway.create(data, { include: ['devices'] });
     return gateway;
   }
 

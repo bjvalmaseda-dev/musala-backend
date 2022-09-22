@@ -11,6 +11,7 @@ const getGatewaySchema = Joi.object({
 const createGatewaySchema = Joi.object({
   name: name.required(),
   ip: ip.required(),
+  devices: Joi.array().max(10),
 });
 
 const updateGatewaySchema = Joi.object({

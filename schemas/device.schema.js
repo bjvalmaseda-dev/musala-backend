@@ -4,7 +4,6 @@ const uuid = Joi.string().guid({ version: ['uuidv4'] });
 const vendor = Joi.string();
 const status = Joi.boolean();
 const gatewayId = Joi.number().integer();
-
 const getDeviceSchema = Joi.object({
   uuid: uuid.required(),
 });
