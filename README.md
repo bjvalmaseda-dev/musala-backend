@@ -109,9 +109,17 @@ For run this project locally you must has installed:
 - `POSTGRES_PASSWORD`: User password  for postgres docker container
 
 6. Start your docker and your api executing 
-  ```sh
-  docker-compose up -d && yarn start
-  ```
+    ```sh
+    docker-compose up -d
+    ```
+7. Running migration 
+    ```sh
+    yarn migrations:run
+    ```
+8. Start your app
+    ```sh
+    yarn start
+    ```
 If everything's was ok you you should be see the following in your terminal
 
 ![Terminal][terminal]
