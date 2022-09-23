@@ -3,10 +3,12 @@ version: '3.3'
 services:
   postgres:
     image: postgres:13
+    env_file:
+      - .env
     environment:
-      - POSTGRES_DB=musala_gateways
-      - POSTGRES_USER=gateways
-      - POSTGRES_PASSWORD=gateways+2k22
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     ports:
       - 5432:5432
     volumes:
@@ -14,8 +16,10 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
+    env_file:
+      - .env
     environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@mail.com
-      - PGADMIN_DEFAULT_PASSWORD=root
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
     ports:
       - 5050:80
