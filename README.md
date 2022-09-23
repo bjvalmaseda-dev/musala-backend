@@ -3,14 +3,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<h3 align="center">musala-frontend</h3>
+<h3 align="center">musala-backend</h3>
   <p align="center">
-    Pokemon store build with React and Redux
+    Musala Soft technical test backend
     <br />
-    <a href="https://github.com/bjvalmaseda-dev/musala-frontend"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/bjvalmaseda-dev/musala-backend"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/bjvalmaseda-dev/musala-frontend/issues">Report Bug</a>  
+    <a href="https://github.com/bjvalmaseda-dev/musala-backend/issues">Report Bug</a>  
   </p>
 </div>
 
@@ -45,9 +45,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![musala list Screen Shot][product-list]
-![musala gateway Screen Shot][product-gateway]
-
 This sample project is managing gateways - master devices that control multiple peripheral devices. 
 Your task is to create a REST service (JSON/HTTP) for storing information about these gateways and their associated devices. This information must be stored in the database. 
 
@@ -61,9 +58,9 @@ The service must also offer an operation for displaying information about all st
 
 ### Built With
 
-* [![Next.js][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Material UI][Material-ui]][Material-ui-url]
+* [![Node js][Node]][Node-url]
+* [![Express][Express]][Express-url]
+* [![Docker][Docker]][Docker-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -79,13 +76,14 @@ For run this project locally you must has installed:
 * Node Package Manager (NPM)
 * Git
 * yarn
+* Docker and Docker Compose
 
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/bjvalmaseda-dev/musala-frontend.git
+   git clone https://github.com/bjvalmaseda-dev/musala-backend.git
    ```
 3. Install all dependency
    ```sh
@@ -93,14 +91,32 @@ For run this project locally you must has installed:
    ```
 4. Copy and rename `.env.example` to `.env`
 
-5. Edit .env with your API url
-    ```.env
-    NEXT_PUBLIC_API_URL=http://{api-url}
+5. Edit .env with your enviroment data
+   ```.env
+      URL_DATABASE=postgres://db_user:db_password@host:port/db_name
+      PORT=3000
+
+      #Postgres container
+      POSTGRES_DB=edb_name
+      POSTGRES_USER=example_user
+      POSTGRES_PASSWORD=db_password   
     ```
-6. Build and start the server
-   ```sh
-   yarn build && yarn start
-   ```
+
+- `URL_DATABASE`: Database URI, you use the data from the docker containers
+- `PORT`: Port when your API server start listen
+- `POSTGRES_DB`: Database name for postgres docker container
+- `POSTGRES_USER`: Username for postgres docker container
+- `POSTGRES_PASSWORD`: User password  for postgres docker container
+
+6. Start your docker and your api executing 
+  ```sh
+  docker-compose up -d && yarn start
+  ```
+If everything's was ok you you should be see the following in your terminal
+
+![Terminal][terminal]
+
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -117,16 +133,16 @@ yarn test
 
 Bárbaro Javier Valmaseda - [@bjvalmaseda](https://twitter.com/bjvalmaseda) - hello@bjvalmaseda.xyz
 
-Project Link: [https://github.com/bjvalmaseda-dev/musala-frontend](https://github.com/bjvalmaseda-dev/musala-frontend)
+Project Link: [https://github.com/bjvalmaseda-dev/musala-backend](https://github.com/bjvalmaseda-dev/musala-backend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 [product-gateway]: readme/gateway.png
-[product-list]: readme/gateway-list.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Material-ui]: https://img.shields.io/badge/Material%20UI-001e3c?style=for-the-badge&logo=mui&logoColor=007FFF
-[Material-ui-url]: https://mui.com/
+[terminal]: images/terminal.png
+[Docker]: https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white
+[Docker-url]: https://www.docker.com/
+[Express]: https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white
+[Express-url]: https://expressjs.com/
+[Node]: https://img.shields.io/badge/Node%20JS-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
+[Node-url]: https://nodejs.org/

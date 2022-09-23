@@ -14,7 +14,7 @@ if (config.env === 'test') {
 } else {
   sequelize = new Sequelize(URI, {
     dialect: 'postgres',
-    logging: true,
+    logging: false,
   });
 }
 
