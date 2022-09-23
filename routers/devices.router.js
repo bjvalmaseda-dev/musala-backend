@@ -48,7 +48,7 @@ router.delete(
     try {
       const { uuid } = req.params;
       await service.delete(uuid);
-      res.status(201).json({ message: 'Device deleted', uuid });
+      res.status(200).json({ message: 'Device deleted', uuid });
     } catch (error) {
       next(error);
     }

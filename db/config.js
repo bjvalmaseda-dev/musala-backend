@@ -7,6 +7,11 @@ module.exports = {
     url: URI,
     dialect: 'postgres',
   },
+  test: {
+    database: 'test',
+    dialect: 'sqlite',
+    storage: 'database.test.sqlite',
+  },
   production: {
     url: URI,
     dialect: 'postgres',

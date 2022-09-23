@@ -10,7 +10,9 @@ class GatewayService {
   }
 
   async findOne(id) {
-    const gateway = await models.Gateway.findByPk(id, { include: ['devices'] });
+    const gateway = await models.Gateway.findByPk(id, {
+      include: ['devices'],
+    });
     if (!gateway) {
       throw boom.notFound('Gateway not found');
     }

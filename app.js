@@ -1,5 +1,4 @@
 const express = require('express');
-const { config } = require('./config/config');
 const cors = require('cors');
 
 const routerApi = require('./routers');
@@ -11,7 +10,6 @@ const {
 } = require('./middlewares/errors.handler');
 
 const app = express();
-const PORT = config.port || 3000;
 
 app.use(express.json());
 app.use(cors());
@@ -22,6 +20,5 @@ app.get('/', (req, res) => {
 routerApi(app);
 
 app.use([logErrors, boomErrorHandler, ormErrorHandler, errorHandler]);
-app.listen(PORT, () => {
-  console.info(`API listen at port ${PORT}`);
-});
+
+module.exports = app;

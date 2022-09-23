@@ -10,6 +10,7 @@ const getDeviceSchema = Joi.object({
 
 const createDeviceSchema = Joi.object({
   vendor: vendor.required(),
+  status,
   gatewayId: gatewayId.required(),
 });
 
